@@ -1,0 +1,43 @@
+#########################################################
+# Created By Cadet Summers.
+# IT394
+# Used to set up a wagtail blog.
+#########################################################
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: install pip
+      command: apt install python3-pip
+      tags: [ system ]
+      
+    - name: install wagtail
+      command: pip3 install wagtail
+      tags: [ system ]
+      
+    - name: make site
+      command: wagtail start mysite
+      
+    - name: cd and install rqr
+      command: pip3 install -r requirements.txt 
+      args:
+        chdir: /home/cadet/mysite/
+      
+    - name: migrate
+      command: python3 manage.py migrate 
+      args:
+        chdir: /home/cadet/mysite
+      
+    - name: create sudo user
+      # running python3 manage.py expects input. I used: https://stackoverflow.com/questions/32532900/not-able-to-create-super-user-with-django-manage-py IOT figure out how to input user/pass/etc
+      command: sudo DJANGO_SUPERUSER_USERNAME=jack DJANGO_SUPERUSER_PASSWORD=cisco    python3 manage.py createsuperuser --username=jack --email=admin@admin.com --noinput
+      args:
+        chdir: /home/cadet/mysite
+        
+    - name: start server
+      command: python3 manage.py runserver 
+      args: 
+        chdir: /home/cadet/mysite
