@@ -1,0 +1,50 @@
+#########################################################
+# Created By Cadet Summers.
+# IT394
+# Used to set up a wagtail blog.
+# Commands needed to set up blog found here:
+# https://github.com/wagtail/wagtail/blob/main/README.md
+#########################################################
+
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+  
+    - name: install pip
+      # I used: https://docs.ansible.com/ansible/2.9/modules/command_module.html to know how to execute commands
+      command: apt install python3-pip
+      tags: [ system ]
+      
+    - name: install wagtail
+      command: pip3 install wagtail
+      tags: [ system ]
+      
+    - name: make site
+      command: wagtail start mysite
+      
+    - name: cd and install rqr
+      command: pip3 install -r requirements.txt 
+      # I used: https://unix.stackexchange.com/questions/515456/run-shell-command-from-ansible to understand how to execute 
+      # commmands in another directory.
+      args:
+        chdir: /home/cadet/mysite/
+      
+    - name: migrate
+      command: python3 manage.py migrate 
+      args:
+        chdir: /home/cadet/mysite
+      
+    - name: create sudo user
+      # running python3 manage.py expects input. I used: https://stackoverflow.com/questions/32532900/not-able-to-create-super-user-with-django-manage-py IOT figure out how to input user/pass/etc
+      command: sudo DJANGO_SUPERUSER_USERNAME=jack DJANGO_SUPERUSER_PASSWORD=cisco    python3 manage.py createsuperuser --username=jack --email=admin@admin.com --noinput
+      args:
+        chdir: /home/cadet/mysite
+        
+    - name: start server
+      command: python3 manage.py runserver 
+      args: 
+        chdir: /home/cadet/mysite
