@@ -1,5 +1,5 @@
 # IT394 Project 2
-# Created By Jack Summers
+### Created By Jack Summers
 
 ## Purpose:
 
@@ -21,7 +21,7 @@ and configure them to be Wagtail webservers automatically.
 
 ## Getting Started:
 
-### If your virtual machine is not configured to use ansible, follow these steps:
+#### If your virtual machine is not configured to use ansible, follow these steps:
     
     sudo apt install openssh-server git
     ssh-keygen
@@ -37,9 +37,9 @@ and configure them to be Wagtail webservers automatically.
 In / etc/ansible/host, uncomment [webservers] and add the IP address of the VM you wish to configure into a Wagtail server below it.
 
 
-### If the above has already been configured, use the following commands to automatically configure a Wagtail blog:
+#### If the above has already been configured, use the following commands to automatically configure a Wagtail blog:
 
     sudo apt install git
     git clone https://github.com/Jsummerstime/IT394/
     cd IT394
-    ansible-playbook -u cadet playbook2.yml --ask-become-pass
+    ansible-playbook -u username playbook2.yml --ask-become-pass
