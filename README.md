@@ -3,13 +3,14 @@
 
 ## Purpose:
 
-The purpose of this project is to provide system administrators with a tool to automate the wagtail configuration process with ansible. 
-Automating the task will allow users to spin up virtual machines at scale and configuring them into wagtail webservers. 
+The main purpose of this project was to become more familiar with Ansible. This project is to provide system administrators with a tool 
+to automate the wagtail configuration process with Ansible. 
+Automating the task will allow users to spin up virtual machines at scale and configuring them into Wagtail webservers. 
 In turn, when an administrator is expecting or experiencing more web traffic, they can quickly increase the number of webservers to handle the traffic.
 
 Wagtail is a content management system that provides a fast, aesthetic interface for users. It allows users to create blogs with images. 
 Additionally, administrators have complete control over front end design and structure, but the system already works “out of the box”. 
-Finally, Wagtail has a powerful search feature supported by PostgreSQL.
+Finally, Wagtail has a powerful search feature supported by PostgreSQL. Citations are commented out within the playbooks code.
 
 ## Problem:
 
