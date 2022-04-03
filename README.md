@@ -23,24 +23,24 @@ and configure them to be Wagtail webservers automatically.
 
 ### If your virtual machine is not configured to be a webserver follow these instructions first:
 
-sudo apt install git
-git clone https://github.com/do-community/ansible-playbooks.git
-cd ansible-playbooks/wordpress-lamp_ubuntu1804
+    sudo apt install git
+    git clone https://github.com/do-community/ansible-playbooks.git
+    cd ansible-playbooks/wordpress-lamp_ubuntu1804
 Update the username and password variables in the vars directory:
-cd ansible-playbooks/vars
-nano default.yml
+    cd ansible-playbooks/vars
+    nano default.yml
 Edit the lines for mysql user and password to be what you want. Remember these for the next steps!
-mysql_user: "wordpressusername"
-mysql_password: "super-secret-password-goes-here"
+    mysql_user: "wordpressusername"
+    mysql_password: "super-secret-password-goes-here"
 Run the playbook
-ansible-playbook -u cadet playbook.yml --ask-become-pass
+    ansible-playbook -u cadet playbook.yml --ask-become-pass
 
 ### If the above has already been configured, use the following commands to automatically configure a Wagtail blog:
 
-sudo apt install ansible
-sudo nano /etc/ansible/host
+    sudo apt install ansible
+    sudo nano /etc/ansible/host
 In / etc/ansible/host add the IP address of your VM.
-sudo apt install git
-git clone https://github.com/Jsummerstime/IT394/
-cd IT394
-ansible-playbook -u cadet playbook2.yml --ask-become-pass
+    sudo apt install git
+    git clone https://github.com/Jsummerstime/IT394/
+    cd IT394
+    ansible-playbook -u cadet playbook2.yml --ask-become-pass
