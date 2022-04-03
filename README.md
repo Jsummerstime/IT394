@@ -38,7 +38,9 @@ Update the username and password variables in the vars directory, Edit the lines
 
     sudo apt install ansible
     sudo nano /etc/ansible/host
+    
 In / etc/ansible/host add the IP address of your VM.
+
     sudo apt install git
     git clone https://github.com/Jsummerstime/IT394/
     cd IT394
