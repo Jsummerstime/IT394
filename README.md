@@ -33,7 +33,7 @@ and configure them to be Wagtail webservers automatically.
     
     sudo apt install ansible
     sudo nano /etc/ansible/host
-    cd /home/user
+    cd ~
 In / etc/ansible/host, uncomment [webservers] and add the IP address of the VM you wish to configure into a Wagtail server below it.
 
 
