@@ -26,13 +26,11 @@ and configure them to be Wagtail webservers automatically.
     sudo apt install git
     git clone https://github.com/do-community/ansible-playbooks.git
     cd ansible-playbooks/wordpress-lamp_ubuntu1804
-Update the username and password variables in the vars directory:
+Update the username and password variables in the vars directory, Edit the lines for mysql user and password to be what you want, Run the playbook:
     cd ansible-playbooks/vars
     nano default.yml
-Edit the lines for mysql user and password to be what you want. Remember these for the next steps!
     mysql_user: "wordpressusername"
     mysql_password: "super-secret-password-goes-here"
-Run the playbook
     ansible-playbook -u cadet playbook.yml --ask-become-pass
 
 ### If the above has already been configured, use the following commands to automatically configure a Wagtail blog:
