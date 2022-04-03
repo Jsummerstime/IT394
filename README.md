@@ -22,7 +22,8 @@ and configure them to be Wagtail webservers automatically.
 ## Getting Started:
 
 ### If your virtual machine is not configured to use ansible, follow these steps:
-
+    
+    sudo apt install openssh-server git
     ssh-keygen
     cd .ssh
     sftp username@IPADDRESS
@@ -33,7 +34,7 @@ and configure them to be Wagtail webservers automatically.
     sudo apt install ansible
     sudo nano /etc/ansible/host
     
-In / etc/ansible/host add the IP address of your VM.
+In / etc/ansible/host, uncomment [webservers] and add the IP address of the VM you wish to configure into a Wagtail server below it.
 
 
 ### If the above has already been configured, use the following commands to automatically configure a Wagtail blog:
