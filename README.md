@@ -23,7 +23,8 @@ and configure them to be Wagtail webservers automatically.
 ## Getting Started:
 
 #### If your virtual machine is not configured to use Ansible, follow these steps:
-    
+The following commands were obtained from Colonel Hamilton:
+
     sudo apt install openssh-server git
     ssh-keygen
     cd .ssh
