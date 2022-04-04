@@ -2,7 +2,8 @@
 # Created By Cadet Summers.
 # IT394
 # Used to set up a wagtail blog.
-# Commands needed to set up blog found here:
+# To configure a wagtail server manuallly, I used the commands
+# to set up the blog from here:
 # https://github.com/wagtail/wagtail/blob/main/README.md
 #########################################################
 
