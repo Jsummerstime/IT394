@@ -46,6 +46,6 @@
         chdir: /home/cadet/mysite
         
     - name: start server
-      command: python3 manage.py runserver 
+      command: python3 manage.py runserver: 8000
       args: 
         chdir: /home/cadet/mysite
