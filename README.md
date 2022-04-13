@@ -45,3 +45,10 @@ In / etc/ansible/host, uncomment [webservers] and add the IP address of the VM y
     git clone https://github.com/Jsummerstime/IT394/
     cd IT394
     ansible-playbook -u username playbook2.yml --ask-become-pass
+
+Bibliography 
+
+[1] vaibh, “wagtail/wagtail,” GitHub, Apr. 13, 2022. https://github.com/wagtail/wagtail/blob/main/README.md (accessed Apr. 13, 2022).
+[2] “command – Execute commands on targets — Ansible Documentation,” docs.ansible.com. https://docs.ansible.com/ansible/2.9/modules/command_module.html (accessed Apr. 13, 2022).
+[3] kaliko, “Run shell command from Ansible,” Unix & Linux Stack Exchange, 2019. https://unix.stackexchange.com/questions/515456/run-shell-command-from-ansible (accessed Apr. 13, 2022).
+[4] pymen, “python - Not able to create super user with Django manage.py,” Stack Overflow, 2022. https://stackoverflow.com/questions/32532900/not-able-to-create-super-user-with-django-manage-py (accessed Apr. 13, 2022).
