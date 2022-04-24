@@ -2,7 +2,7 @@
 ### Created By Jack Summers and Ben Wettstein
 
 ## Purpose:
-The purpose of this project is to utilize Ansible to automate system administrator tasks. The ansible script will automatically set up a Shuup E-Commerce site with a MySQL database. Both the E-commerce website and MySQL database are in seperate docker containers. 
+The purpose of this project is to utilize Ansible to automate system administrator tasks. The ansible script will automatically set up a Prestashop E-Commerce site with a MySQL database. Both the E-commerce website and MySQL database are in seperate docker containers. 
 
 This project's hypothetical situtation involves selling rings to the USMA class of 2023. Tiffany & Co. requires a website to sell their rings to cadets. This github provides the instructions to manually configure the E-commerce site and its database. 
 
@@ -21,9 +21,9 @@ The ansible config commands were obtained from Colonel Hamilton:
     sudo apt install ansible
     sudo nano /etc/ansible/host
     cd ~
-In / etc/ansible/host, uncomment [webservers] and add the IP address of the VM you wish to configure into a Wagtail server below it.
+In / etc/ansible/host, uncomment [webservers] and add the IP address of the VM you wish to configure into a E-commerce server below it.
 
-#### If the above has already been configured, use the following commands to automatically configure a Wagtail blog:
+#### If the above has already been configured, use the following commands to automatically configure the database and E-commerce site:
 
     sudo apt install git
     git clone https://github.com/Jsummerstime/IT394/
